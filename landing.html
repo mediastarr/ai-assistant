@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TeamAssist — AI Assistant for Your Team · Mediastarr</title>
+<meta name="description" content="An AI assistant that knows your shop inside out. Answers your crew's questions so you don't have to — 24/7. $99/month.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: #1f2937; background: #fff; line-height: 1.6; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  .logo { font-weight: 800; font-size: 20px; color: #1a2b4a; display: flex; align-items: center; gap: 9px; }
+  .logo .mark { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, #2563eb, #1d4ed8);
+                color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; }
+  .logo span { color: #2563eb; }
+  .btn { display: inline-block; background: #2563eb; color: #fff; text-decoration: none;
+         padding: 13px 30px; border-radius: 12px; font-weight: 700; font-size: 16px; border: none; cursor: pointer; }
+  .btn:hover { background: #1d4ed8; }
+  .btn.ghost { background: #eef2ff; color: #2563eb; }
+  .hero { text-align: center; padding: 70px 0 50px; }
+  .hero h1 { font-size: 46px; line-height: 1.15; color: #111827; letter-spacing: -1px; max-width: 760px; margin: 0 auto 18px; }
+  .hero h1 span { color: #2563eb; }
+  .hero p { font-size: 19px; color: #6b7280; max-width: 620px; margin: 0 auto 32px; }
+  .hero .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .badges { display: flex; gap: 26px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+  .badge { display: flex; align-items: center; gap: 9px; font-size: 14.5px; color: #4b5563; font-weight: 600; }
+  .badge .dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; }
+  .section { padding: 64px 0; }
+  .section h2 { text-align: center; font-size: 32px; color: #111827; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .section .sub { text-align: center; color: #6b7280; font-size: 17px; margin-bottom: 44px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .step { background: #f8fafc; border-radius: 16px; padding: 30px 26px; text-align: center; }
+  .step .num { width: 44px; height: 44px; border-radius: 50%; background: #2563eb; color: #fff;
+               font-weight: 800; font-size: 19px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .step h3 { font-size: 18px; margin-bottom: 8px; }
+  .step p { font-size: 14.5px; color: #6b7280; }
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .feat { display: flex; gap: 16px; background: #f8fafc; border-radius: 14px; padding: 24px; }
+  .feat .icon { font-size: 28px; flex: 0 0 auto; }
+  .feat h3 { font-size: 16.5px; margin-bottom: 6px; }
+  .feat p { font-size: 14.5px; color: #6b7280; }
+  .pricing { max-width: 440px; margin: 0 auto; background: #fff; border: 2px solid #2563eb;
+             border-radius: 20px; padding: 40px 36px; text-align: center;
+             box-shadow: 0 12px 40px rgba(37,99,235,.12); }
+  .pricing .price { font-size: 52px; font-weight: 800; color: #111827; }
+  .pricing .per { color: #6b7280; font-size: 16px; }
+  .pricing ul { list-style: none; text-align: left; margin: 26px 0; }
+  .pricing li { padding: 9px 0; font-size: 15px; border-bottom: 1px solid #f1f5f9; }
+  .pricing li:before { content: "✓ "; color: #22c55e; font-weight: 700; }
+  .faq { max-width: 720px; margin: 0 auto; }
+  .faq details { background: #f8fafc; border-radius: 12px; padding: 18px 22px; margin-bottom: 12px; }
+  .faq summary { font-weight: 700; cursor: pointer; font-size: 15.5px; }
+  .faq p { margin-top: 10px; font-size: 14.5px; color: #4b5563; }
+  .final { text-align: center; padding: 70px 0; background: #f8fafc; border-radius: 24px; margin-bottom: 40px; }
+  .final h2 { font-size: 32px; margin-bottom: 12px; }
+  .final p { color: #6b7280; margin-bottom: 28px; font-size: 17px; }
+  footer { text-align: center; color: #9aa1ad; font-size: 13px; padding: 30px 0 40px; }
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 34px; }
+    .steps, .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo"><span class="mark">M</span>Team<span>Assist</span></div>
+    <a class="btn" href="#pricing">Get started</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Stop answering the same <span>five questions.</span></h1>
+    <p>"When's payday?" "What's the Wi-Fi password?" "How do I close out the register?" — your crew asks, the bot answers. Trained on everything about your shop, available 24/7.</p>
+    <div class="cta-row">
+      <a class="btn" href="#pricing">Start free — 14 days</a>
+      <a class="btn ghost" href="#how">How it works</a>
+    </div>
+    <div class="badges">
+      <div class="badge"><span class="dot"></span>Staff-only, key-gated</div>
+      <div class="badge"><span class="dot"></span>Learns your handbook</div>
+      <div class="badge"><span class="dot"></span>Set up in 10 minutes</div>
+      <div class="badge"><span class="dot"></span>No website needed</div>
+    </div>
+  </div>
+
+  <div class="section" id="how">
+    <h2>Up and running today</h2>
+    <div class="sub">If you can send a text, you can set this up.</div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Tell it about your shop</h3>
+        <p>How time-off works, the opening checklist, who to call when something breaks — type it in plain English. No handbook required.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Text the link to your crew</h3>
+        <p>Everyone gets a private link with a simple password. They open it on their phone and start asking. That's the whole setup.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>It learns the ropes</h3>
+        <p>When someone stumps it, you get the question and type the answer once. From then on, it handles it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Like a shift lead who never sleeps</h2>
+    <div class="sub">Knows your shop, answers your crew, learns as it goes.</div>
+    <div class="features">
+      <div class="feat">
+        <div class="icon">📋</div>
+        <div><h3>Answers the repeat questions</h3><p>"When's payday?" "How do I call out sick?" "Where's the cleaning checklist?" — answered instantly, so you don't have to.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🎓</div>
+        <div><h3>New hires get up to speed</h3><p>First day on the job? The bot knows the opening checklist, the Wi-Fi password, who to ask for what — no shadowing required.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🔑</div>
+        <div><h3>Just for your crew</h3><p>Password-protected link for your team only. Customers never see it, Google never finds it.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🧠</div>
+        <div><h3>Teach it once</h3><p>Stumped? You get the question, type the answer, done. It remembers forever.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🛠️</div>
+        <div><h3>You stay in control</h3><p>Update shop info, change the team password, teach new answers — all from one simple page. No tech skills needed.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🌍</div>
+        <div><h3>Speaks your crew's language</h3><p>Spanish, French, Portuguese and more — it replies in whatever language they ask in.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">📱</div>
+        <div><h3>Works on their phones</h3><p>No app to install. They open the link, type the password, and start asking. Done.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">✅</div>
+        <div><h3>Checklists that get done</h3><p>Opening, closing, cleaning — tappable lists with timestamps. You see who did what, when.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🗓️</div>
+        <div><h3>Shift board + swaps</h3><p>Post the week's schedule. Staff request swaps, you approve with one tap. No more group-text chaos.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">📢</div>
+        <div><h3>Announcements</h3><p>"Closing early Friday." Post it once, the whole crew sees it at the top of their page.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🏖️</div>
+        <div><h3>Time-off requests</h3><p>Staff tap the days they want on a calendar, you approve or deny. Everyone sees the status. No lost texts.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🔧</div>
+        <div><h3>Report a problem</h3><p>"Freezer's making noise." Logged with a timestamp, straight to you. Nothing slips through.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">⭐</div>
+        <div><h3>Shoutouts</h3><p>Peer kudos board. Costs nothing, and it's the reason staff actually <em>like</em> opening the app.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🕐</div>
+        <div><h3>Clock in/out + timesheets</h3><p>Staff tap once on their phone. You get clean hours, week totals, and a CSV for payroll.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">💵</div>
+        <div><h3>Payroll in one screen</h3><p>Set hourly rates, overtime auto-calcs at 1.5× over 40 hours, mark the week paid. The CSV carries the full pay breakdown.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">⏰</div>
+        <div><h3>Overtime + late alerts</h3><p>Someone crosses 40 hours? You get an email. Someone's 15 minutes late clocking in? You hear about that too.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">📧</div>
+        <div><h3>Monday manager digest</h3><p>One email every Monday: last week's hours, pulse score, open reports and pending requests. Start the week knowing.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🙋</div>
+        <div><h3>Open-shift claims</h3><p>Post an open shift and the first staffer to tap it gets it. No more group-text scramble to cover a callout.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🗓️</div>
+        <div><h3>Full-year calendars</h3><p>Shifts and time off on a real year calendar — see the whole year, tap any day for the details.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">👀</div>
+        <div><h3>Announcement read receipts</h3><p>Post it once — and see exactly who actually saw it. No more "nobody told me."</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🌙</div>
+        <div><h3>Dark mode + home-screen install</h3><p>Staff can install it like a real app and switch to dark mode for those 5am opens.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">📱</div>
+        <div><h3>Shift reminders by text</h3><p>"Your shift starts in an hour." No more "I forgot" no-shows — automatically, before every shift.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">📊</div>
+        <div><h3>Weekly pulse check</h3><p>Every Friday staff rate their week 1–5. You see the trend and the honest notes behind it.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🚀</div>
+        <div><h3>New-hire onboarding track</h3><p>First-day checklist plus a handbook quiz. New hires get up to speed without shadowing you.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">📄</div>
+        <div><h3>Document hub</h3><p>Policies, forms, guides — one place the whole crew can actually find them.</p></div>
+      </div>
+      <div class="feat">
+        <div class="icon">🏆</div>
+        <div><h3>Monthly MVP vote</h3><p>Built on the shoutouts board. The crew votes, you crown the winner, they get the glory.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="pricing">
+    <h2>One flat price</h2>
+    <div class="sub">Less than one wasted hour of your week.</div>
+    <div class="pricing">
+      <div class="price">$99</div>
+      <div class="per">per month · 14-day free trial</div>
+      <ul>
+        <li>Your whole crew, no per-person fees</li>
+        <li>Knows your shop inside out</li>
+        <li>Teach it once, it remembers</li>
+        <li>Private link + team password</li>
+        <li>Checklists, shifts, time-off, shoutouts & more</li>
+        <li>Payroll with overtime, calculated for you</li>
+        <li>Works on any phone</li>
+        <li>Email support</li>
+      </ul>
+      <a class="btn" href="https://mediastarr.lemonsqueezy.com/checkout/buy/31d9729c-63eb-4c3a-aa13-1bb6b7daca4b">Start free — 14 days</a>
+      <div class="sub" style="margin:14px 0 0;font-size:13px">Card required · cancel anytime</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Who can see our shop's info?</summary>
+        <p>Only your crew. The page is password-protected, the info is never public, and Google can't find it.</p>
+      </details>
+      <details>
+        <summary>What if it doesn't know something?</summary>
+        <p>It says so and tells them to ask you — and you get the question so you can teach it the answer once. Then it knows.</p>
+      </details>
+      <details>
+        <summary>Do my staff need to install anything?</summary>
+        <p>No. It's a web link — they open it, type the password, and chat. Works on any phone, nothing to download.</p>
+      </details>
+      <details>
+        <summary>How is this different from ChatGPT?</summary>
+        <p>ChatGPT doesn't know your shop. This knows your schedule rules, your opening checklist, who to call when the freezer alarms — and only your crew can ask it.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="final">
+    <h2>Your crew has questions. Let the bot take them.</h2>
+    <p>14 days free. Set it up between customers.</p>
+    <a class="btn" href="#pricing">Get started</a>
+  </div>
+
+  <footer>TeamAssist by Mediastarr · hello@mediastarr.com</footer>
+</div>
+</body>
+</html>
